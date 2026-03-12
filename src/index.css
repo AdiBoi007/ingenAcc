@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Comfortaa", system-ui, sans-serif;
+  --font-mono: "DM Mono", monospace;
+  --font-display: "Comfortaa", sans-serif;
+
+  --color-black: #000000;
+  --color-canvas: #050505;
+  --color-surface: #080808;
+  --color-panel: rgba(255, 255, 255, 0.03);
+  --color-panel-hover: rgba(255, 255, 255, 0.05);
+
+  --color-accent-cyan: #22d3ee;
+  --color-accent-emerald: #34d399;
+  --color-accent-amber: #fbbf24;
+  --color-accent-indigo: #818cf8;
+  --color-accent-violet: #a78bfa;
+  --color-accent-orange: #fb923c;
+}
+
+/* Global resets */
+@layer base {
+  body {
+    @apply bg-black text-white antialiased selection:bg-accent-cyan/20 selection:text-white min-h-screen overflow-x-hidden;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+
+  h1 {
+    font-size: clamp(2.8rem, 9vw, 7rem);
+    line-height: 1;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1.05;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-[#080808] backdrop-blur-2xl border border-white/[0.06] rounded-2xl overflow-hidden transition-all duration-500 hover:border-white/[0.1];
+  }
+
+  .glass-panel-raised {
+    @apply bg-[#060606] backdrop-blur-3xl border border-white/[0.08] rounded-3xl shadow-2xl transition-all duration-500 hover:border-white/[0.12];
+  }
+
+  .microcopy {
+    @apply font-mono text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-white/40 font-medium;
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.3), 0 0 60px rgba(34, 211, 238, 0.1);
+  }
+
+  .glow-violet {
+    box-shadow: 0 0 20px rgba(167, 139, 250, 0.3), 0 0 60px rgba(167, 139, 250, 0.1);
+  }
+
+  .ambient-cyan {
+    background: radial-gradient(ellipse at center, rgba(34, 211, 238, 0.12) 0%, transparent 70%);
+  }
+
+  .ambient-violet {
+    background: radial-gradient(ellipse at center, rgba(139, 92, 246, 0.12) 0%, transparent 70%);
+  }
+}
