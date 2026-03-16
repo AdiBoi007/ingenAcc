@@ -8,6 +8,7 @@ type WaitlistRequest = {
 type WaitlistResponse = {
   status: (code: number) => WaitlistResponse;
   json: (body: unknown) => void;
+  end: () => void;
   setHeader: (name: string, value: string | string[]) => void;
 };
 
@@ -22,7 +23,16 @@ function getEmailFromBody(body: unknown): string | null {
 }
 
 export default async function handler(req: WaitlistRequest, res: WaitlistResponse) {
-  res.setHeader("Allow", ["POST"]);
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  res.setHeader("Allow", ["POST", "OPTIONS"]);
+
+  if (req.method === "OPTIONS") {
+    res.status(204);
+    res.end();
+    return;
+  }
 
   if (req.method !== "POST") {
     res.status(405).json({ error: "Method not allowed" });

@@ -3,6 +3,12 @@ import type { FormEvent } from "react";
 import { motion } from "framer-motion";
 import { CheckCircle2, Loader2 } from "lucide-react";
 
+const WAITLIST_ENDPOINT =
+  import.meta.env.VITE_WAITLIST_API_URL ??
+  (import.meta.env.DEV
+    ? "https://ingen-revive.vercel.app/api/waitlist"
+    : "/api/waitlist");
+
 export function WaitlistSection() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -15,7 +21,7 @@ export function WaitlistSection() {
     setErrorMsg("");
 
     try {
-      const response = await fetch("/api/waitlist", {
+      const response = await fetch(WAITLIST_ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
