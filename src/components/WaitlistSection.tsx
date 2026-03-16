@@ -15,7 +15,7 @@ export function WaitlistSection() {
     setErrorMsg("");
 
     try {
-      const response = await fetch("http://localhost:3000/api/waitlist", {
+      const response = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
