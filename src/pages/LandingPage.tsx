@@ -19,9 +19,10 @@ import {
   Zap,
   type LucideIcon,
 } from "lucide-react";
+import { useLocation } from "react-router-dom";
 
-import ingenLogo from "../assets/ingen logo.png";
 import { Globe } from "../components/Globe";
+import { LandingNav } from "../components/LandingNav";
 import {
   EarningsSim,
   HowItWorksSection,
@@ -245,6 +246,7 @@ function WhatsInsideSection() {
 
 export default function LandingPage() {
   const [navScrolled, setNavScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -256,6 +258,32 @@ export default function LandingPage() {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (!location.hash) return;
+
+    const targetId = location.hash.slice(1);
+    let attempt = 0;
+    let timeoutId = 0;
+
+    const scrollToHash = () => {
+      const target = document.getElementById(targetId);
+
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        return;
+      }
+
+      if (attempt >= 8) return;
+
+      attempt += 1;
+      timeoutId = window.setTimeout(scrollToHash, 80);
+    };
+
+    scrollToHash();
+
+    return () => window.clearTimeout(timeoutId);
+  }, [location.hash]);
 
   const universities = [
     "Boston Uni",
@@ -288,13 +316,6 @@ export default function LandingPage() {
     "Auto-Schedule",
   ];
 
-  const navItems = [
-    { href: "#how-it-works", label: "HOW IT WORKS" },
-    { href: "#pricing", label: "PRICING" },
-    { href: "#talk-to-aristotle", label: "ARISTOTLE" },
-    { href: "#waitlist", label: "EARLY ACCESS" },
-  ];
-
   return (
     <div className="tactical-page">
       <div aria-hidden="true" className="pointer-events-none">
@@ -303,49 +324,7 @@ export default function LandingPage() {
         <div className="tactical-orb tactical-orb-amber left-1/2 top-[68%] h-[28rem] w-[28rem] -translate-x-1/2 opacity-[0.07]" />
       </div>
 
-      <nav className={`landing-nav ${navScrolled ? "landing-nav-scrolled" : ""}`}>
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-4 sm:px-6">
-          <button
-            type="button"
-            className="flex items-center gap-3"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          >
-            <div className="flex h-10 w-10 items-center justify-center rounded-[2px] border border-border bg-surface p-2">
-              <img src={ingenLogo} alt="Ingen" className="h-full w-full object-contain" />
-            </div>
-            <div className="flex items-end gap-2">
-              <span className="landing-nav-wordmark">INGEN</span>
-              <span className="landing-nav-submark">LABS</span>
-            </div>
-          </button>
-
-          <div className="hidden items-center gap-3 lg:flex">
-            {navItems.map((item, index) => (
-              <div key={item.href} className="flex items-center gap-3">
-                <a href={item.href} className="landing-nav-link">
-                  {item.label}
-                </a>
-                {index < navItems.length - 1 ? (
-                  <span className="landing-nav-separator">·</span>
-                ) : null}
-              </div>
-            ))}
-          </div>
-
-          <div className="hidden items-center gap-3 sm:flex">
-            <span className="landing-nav-badge">LABS</span>
-            <button
-              type="button"
-              className="landing-nav-cta"
-              onClick={() =>
-                document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" })
-              }
-            >
-              JOIN THE WAITLIST
-            </button>
-          </div>
-        </div>
-      </nav>
+      <LandingNav scrolled={navScrolled} />
 
       <section className="relative w-full border-b border-border pb-24 pt-36 md:pb-28 md:pt-40">
         <div className="tactical-shell">
@@ -392,7 +371,7 @@ export default function LandingPage() {
               className="mx-auto grid max-w-4xl grid-cols-1 gap-px border border-border bg-border sm:grid-cols-3"
             >
               {[
-                { n: 10000, s: "+", label: "Students using it", tone: "tactical-accent-cyan" },
+                { n: 500, s: "+", label: "Signups", tone: "tactical-accent-cyan" },
                 { n: 30, s: "+", label: "Universities", tone: "tactical-accent-violet" },
                 { n: 94, s: "%", label: "Say it helped them pass", tone: "tactical-accent-amber" },
               ].map(({ n, s, label, tone }) => (
@@ -761,7 +740,7 @@ export default function LandingPage() {
               <motion.div variants={FADE_UP} className="grid grid-cols-2 gap-4">
                 {[
                   { value: "30+", label: "Universities", tone: "tactical-accent-cyan" },
-                  { value: "10K+", label: "Active students", tone: "tactical-accent-emerald" },
+                  { value: "500+", label: "Signups", tone: "tactical-accent-emerald" },
                   { value: "94%", label: "Exam pass rate", tone: "tactical-accent-violet" },
                   { value: "$15", label: "Per month", tone: "tactical-accent-amber" },
                 ].map((item) => (

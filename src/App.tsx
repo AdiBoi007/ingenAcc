@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { MainLayout } from "./layouts/MainLayout";
 import LandingPage from "./pages/LandingPage";
+import LabsPage from "./pages/LabsPage";
 import DashboardPage from "./pages/DashboardPage";
 import PlannerPage from "./pages/PlannerPage";
 import CourseOverviewPage from "./pages/CourseOverviewPage";
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         {/* Public / Full-Screen Routes */}
         <Route path="/" element={<LandingPage />} />
+        <Route path="/labs" element={<LabsPage />} />
         <Route path="/onboarding" element={<OnboardingPage />} />
 
         {/* App Routes (With Sidebar/Navbar) */}

@@ -457,6 +457,10 @@
     background: rgba(0, 0, 0, 0.92);
   }
 
+  .landing-nav-home {
+    text-decoration: none;
+  }
+
   .landing-nav-link {
     font-family: var(--font-sans);
     font-size: 13px;
@@ -464,6 +468,7 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: #888888;
+    text-decoration: none;
     transition: color 0.2s ease;
   }
 
@@ -499,6 +504,7 @@
     font-family: var(--font-mono);
     font-size: 11px;
     letter-spacing: 0.18em;
+    text-decoration: none;
     text-transform: uppercase;
     color: #6c63ff;
   }
@@ -512,6 +518,7 @@
     font-size: 12px;
     font-weight: 500;
     letter-spacing: 0.1em;
+    text-decoration: none;
     text-transform: uppercase;
     color: #00e5ff;
     transition:
@@ -651,12 +658,702 @@
     color: #444444;
   }
 
+  .labs-page {
+    background:
+      radial-gradient(circle at top left, rgba(34, 211, 238, 0.06), transparent 36%),
+      radial-gradient(circle at top right, rgba(167, 139, 250, 0.06), transparent 32%),
+      #000000;
+  }
+
+  .labs-hero-tag {
+    margin-bottom: 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #555555;
+  }
+
+  .labs-hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 9vw, 7.5rem);
+    line-height: 0.88;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+
+  .labs-hero-copy {
+    margin-top: 1.75rem;
+    max-width: 42rem;
+    font-family: var(--font-sans);
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: #666666;
+  }
+
+  .labs-feature-section {
+    border-top: 1px solid #111111;
+  }
+
+  .labs-feature-section-dim {
+    opacity: 0.45;
+  }
+
+  .labs-feature-shell {
+    margin: 0 auto;
+    max-width: 1280px;
+    padding: 120px 80px;
+  }
+
+  .labs-reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
+  }
+
+  .labs-reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .labs-feature-index {
+    margin-bottom: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #333333;
+  }
+
+  .labs-feature-title {
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 6vw, 4.5rem);
+    line-height: 0.9;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+
+  .labs-feature-descriptor {
+    margin-top: 0.85rem;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #555555;
+  }
+
+  .labs-feature-status {
+    margin-top: 1rem;
+    display: inline-flex;
+    border: 1px solid #333333;
+    padding: 0.35rem 0.7rem;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #444444;
+  }
+
+  .labs-feature-description {
+    margin-top: 1.5rem;
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: #888888;
+  }
+
+  .labs-feature-list {
+    margin-top: 1.75rem;
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .labs-feature-list-item {
+    display: flex;
+    gap: 0.85rem;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 1.7;
+    color: #666666;
+  }
+
+  .labs-feature-caption {
+    margin-top: 1rem;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #444444;
+  }
+
+  .labs-callout {
+    margin-top: 1.75rem;
+    border: 1px solid #1a1a1a;
+    background: #0a0a0a;
+    padding: 1rem 1.15rem;
+  }
+
+  .labs-callout-line {
+    color: #555555;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .labs-callout-line + .labs-callout-line {
+    margin-top: 0.15rem;
+  }
+
+  .labs-callout-line-mono {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .labs-callout-line-italic {
+    font-style: italic;
+  }
+
+  .labs-callout-line-accent {
+    letter-spacing: 0.16em;
+  }
+
+  .labs-media-panel {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border: 1px solid #1a1a1a;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 18%),
+      #050505;
+  }
+
+  .labs-media-panel::after {
+    content: attr(data-concept);
+    position: absolute;
+    right: 1rem;
+    bottom: 0.9rem;
+    max-width: min(18rem, 55%);
+    text-align: right;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.12);
+    pointer-events: none;
+  }
+
+  .labs-media-badge {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.55rem 0.9rem;
+    border-radius: 999px;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .labs-media-badge-alert {
+    background: #ff3347;
+    color: #ffffff;
+  }
+
+  .labs-media-box {
+    min-width: 11rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.04);
+    padding: 0.85rem 1rem;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+
+  .labs-media-panel-cramazon::before,
+  .labs-media-panel-painstation::before,
+  .labs-media-panel-nerd::before,
+  .labs-media-panel-void::before,
+  .labs-media-panel-blackmarket::before,
+  .labs-media-panel-uniconnect::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, transparent 35%, rgba(0, 0, 0, 0.6) 100%);
+    pointer-events: none;
+  }
+
+  .labs-media-panel-cramazon {
+    background:
+      radial-gradient(circle at 18% 22%, rgba(34, 211, 238, 0.18), transparent 26%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 30%),
+      #06090d;
+  }
+
+  .labs-cramazon-skyline {
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 30%;
+    background:
+      linear-gradient(90deg, rgba(34, 211, 238, 0.18) 0 12%, transparent 12% 18%, rgba(34, 211, 238, 0.08) 18% 28%, transparent 28% 34%, rgba(255, 255, 255, 0.06) 34% 45%, transparent 45% 55%, rgba(34, 211, 238, 0.1) 55% 63%, transparent 63% 71%, rgba(255, 255, 255, 0.08) 71% 83%, transparent 83% 100%);
+    opacity: 0.55;
+  }
+
+  .labs-cramazon-figure {
+    position: absolute;
+    left: 17%;
+    bottom: 16%;
+    width: 8.5rem;
+    height: 12rem;
+  }
+
+  .labs-cramazon-head {
+    position: absolute;
+    left: 2.8rem;
+    top: 0.2rem;
+    width: 2.1rem;
+    height: 2.1rem;
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.26));
+  }
+
+  .labs-cramazon-body {
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+    width: 3.6rem;
+    height: 6.4rem;
+    border-radius: 1.2rem 1.2rem 0.8rem 0.8rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(34, 211, 238, 0.12));
+  }
+
+  .labs-cramazon-cape {
+    position: absolute;
+    left: 0.4rem;
+    top: 2.4rem;
+    width: 6.5rem;
+    height: 8rem;
+    clip-path: polygon(0 0, 100% 8%, 86% 100%, 14% 100%);
+    background: linear-gradient(180deg, rgba(0, 229, 255, 0.42), rgba(0, 229, 255, 0.04));
+    filter: blur(0.5px);
+  }
+
+  .labs-cramazon-stack {
+    position: absolute;
+    right: 8%;
+    bottom: 14%;
+    display: grid;
+    gap: 0.7rem;
+    justify-items: end;
+  }
+
+  .labs-media-panel-painstation {
+    background:
+      radial-gradient(circle at 50% 24%, rgba(240, 165, 0, 0.22), transparent 30%),
+      linear-gradient(180deg, rgba(255, 0, 0, 0.12), transparent 32%),
+      #090605;
+  }
+
+  .labs-painstation-screen {
+    position: absolute;
+    left: 9%;
+    right: 9%;
+    top: 11%;
+    border: 1px solid rgba(240, 165, 0, 0.22);
+    background: linear-gradient(180deg, rgba(255, 40, 40, 0.18), rgba(0, 0, 0, 0.9));
+    padding: 1.2rem;
+    box-shadow: 0 0 44px rgba(255, 62, 62, 0.12);
+  }
+
+  .labs-screen-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+
+  .labs-painstation-hud {
+    margin-top: 1.1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+  }
+
+  .labs-painstation-hud span {
+    border: 1px solid rgba(240, 165, 0, 0.24);
+    background: rgba(240, 165, 0, 0.08);
+    padding: 0.45rem 0.65rem;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: #f0a500;
+  }
+
+  .labs-painstation-desk {
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 42%;
+    background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.86));
+  }
+
+  .labs-painstation-monitor-glow {
+    position: absolute;
+    left: 50%;
+    top: -5.5rem;
+    width: 18rem;
+    height: 9rem;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(255, 0, 0, 0.2), transparent 72%);
+    filter: blur(16px);
+  }
+
+  .labs-painstation-silhouette {
+    position: absolute;
+    left: 50%;
+    bottom: 1.4rem;
+    width: 8rem;
+    height: 7rem;
+    transform: translateX(-50%);
+    border-radius: 3rem 3rem 0.8rem 0.8rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.02));
+  }
+
+  .labs-painstation-controller {
+    position: absolute;
+    right: 18%;
+    bottom: 1.6rem;
+    width: 5.5rem;
+    height: 2.8rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .labs-media-panel-nerd {
+    background:
+      radial-gradient(circle at 18% 18%, rgba(167, 139, 250, 0.18), transparent 26%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 30%),
+      #060609;
+  }
+
+  .labs-nerd-badge {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    z-index: 2;
+    border: 1px solid rgba(167, 139, 250, 0.24);
+    background: rgba(167, 139, 250, 0.08);
+    padding: 0.5rem 0.8rem;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: #a78bfa;
+  }
+
+  .labs-nerd-call {
+    position: absolute;
+    inset: 18% 9% auto 9%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .labs-nerd-card {
+    min-height: 10rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    padding: 1rem;
+  }
+
+  .labs-nerd-card-highlight {
+    border-color: rgba(167, 139, 250, 0.3);
+    background: rgba(167, 139, 250, 0.1);
+  }
+
+  .labs-nerd-card-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: #888888;
+  }
+
+  .labs-nerd-avatar {
+    margin-top: 1rem;
+    height: 6rem;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background:
+      radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.78), transparent 18%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.15), transparent 55%),
+      rgba(0, 0, 0, 0.34);
+  }
+
+  .labs-nerd-avatar-user {
+    background-color: rgba(255, 255, 255, 0.02);
+  }
+
+  .labs-nerd-avatar-tutor {
+    background-color: rgba(167, 139, 250, 0.08);
+  }
+
+  .labs-nerd-bubble {
+    position: absolute;
+    right: 1.3rem;
+    bottom: 1.2rem;
+    max-width: 18rem;
+    border: 1px solid rgba(167, 139, 250, 0.24);
+    background: rgba(0, 0, 0, 0.72);
+    padding: 0.8rem 1rem;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #ffffff;
+  }
+
+  .labs-media-panel-void {
+    background:
+      radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent 12%),
+      radial-gradient(circle at 50% 50%, rgba(85, 85, 85, 0.24), transparent 34%),
+      #030303;
+  }
+
+  .labs-void-ring {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 15rem;
+    height: 15rem;
+    transform: translate(-50%, -50%);
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+      0 0 0 16px rgba(255, 255, 255, 0.02),
+      0 0 48px rgba(255, 255, 255, 0.08);
+  }
+
+  .labs-void-user,
+  .labs-void-post {
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.04);
+    padding: 0.45rem 0.65rem;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #6b6b6b;
+  }
+
+  .labs-void-post {
+    max-width: 15rem;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    letter-spacing: 0;
+    line-height: 1.5;
+    text-transform: none;
+    color: #a0a0a0;
+  }
+
+  .labs-void-user-a {
+    left: 8%;
+    top: 18%;
+  }
+
+  .labs-void-user-b {
+    right: 10%;
+    top: 22%;
+  }
+
+  .labs-void-user-c {
+    left: 20%;
+    bottom: 18%;
+  }
+
+  .labs-void-post-a {
+    left: 6%;
+    bottom: 22%;
+  }
+
+  .labs-void-post-b {
+    right: 6%;
+    bottom: 18%;
+  }
+
+  .labs-void-post-c {
+    right: 12%;
+    top: 42%;
+  }
+
+  .labs-media-panel-blackmarket {
+    background:
+      radial-gradient(circle at 72% 28%, rgba(240, 165, 0, 0.18), transparent 25%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 30%),
+      #080604;
+  }
+
+  .labs-blackmarket-alley {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(0, 0, 0, 0.7), transparent 18%, transparent 82%, rgba(0, 0, 0, 0.72)),
+      linear-gradient(180deg, transparent 0 64%, rgba(0, 0, 0, 0.8) 100%);
+  }
+
+  .labs-blackmarket-silhouette {
+    position: absolute;
+    left: 18%;
+    bottom: 8%;
+    width: 9rem;
+    height: 13rem;
+    border-radius: 3rem 3rem 1rem 1rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(0, 0, 0, 0.18));
+  }
+
+  .labs-blackmarket-folder {
+    position: absolute;
+    right: 10%;
+    top: 24%;
+    border: 1px solid rgba(240, 165, 0, 0.28);
+    background: rgba(240, 165, 0, 0.1);
+    padding: 1rem 1.2rem;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    line-height: 1.7;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #ffe1a0;
+    box-shadow: 0 0 32px rgba(240, 165, 0, 0.08);
+  }
+
+  .labs-blackmarket-tag {
+    position: absolute;
+    right: 10%;
+    bottom: 18%;
+    border: 1px solid rgba(240, 165, 0, 0.32);
+    background: rgba(0, 0, 0, 0.78);
+    padding: 0.6rem 0.85rem;
+    font-family: var(--font-display);
+    font-size: 2rem;
+    letter-spacing: 0.05em;
+    color: #f0a500;
+  }
+
+  .labs-media-panel-uniconnect {
+    background:
+      radial-gradient(circle at 50% 18%, rgba(255, 255, 255, 0.08), transparent 24%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 28%),
+      #040404;
+  }
+
+  .labs-uniconnect-grid {
+    position: absolute;
+    inset: 18% 8% auto 8%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .labs-uniconnect-card {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.04);
+    padding: 1rem;
+  }
+
+  .labs-uniconnect-avatar {
+    height: 5rem;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background:
+      radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.72), transparent 16%),
+      rgba(255, 255, 255, 0.02);
+  }
+
+  .labs-uniconnect-badge {
+    margin-top: 0.75rem;
+    display: inline-flex;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0.4rem 0.55rem;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: #8f8f8f;
+  }
+
+  .labs-uniconnect-links {
+    position: absolute;
+    inset: auto 14% 14% 14%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .labs-uniconnect-links span {
+    display: block;
+    height: 1px;
+    width: 22%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.14), transparent);
+  }
+
+  .labs-cta-section {
+    border-top: 1px solid #111111;
+    border-bottom: 1px solid #111111;
+  }
+
+  .labs-cta-title {
+    font-family: var(--font-display);
+    font-size: clamp(4.5rem, 8vw, 5rem);
+    line-height: 0.92;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+
+  .labs-back-link {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-decoration: underline;
+    text-transform: uppercase;
+    color: #444444;
+    transition: color 0.2s ease;
+  }
+
+  .labs-back-link:hover {
+    color: #888888;
+  }
+
   @media (max-width: 1024px) {
     .features-overview {
       padding: 112px 40px;
     }
 
     .features-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .labs-feature-shell {
+      padding: 112px 40px;
+    }
+
+    .labs-uniconnect-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
@@ -668,6 +1365,80 @@
 
     .features-grid {
       grid-template-columns: minmax(0, 1fr);
+    }
+
+    .labs-hero-copy {
+      max-width: 100%;
+      font-size: 16px;
+    }
+
+    .labs-feature-shell {
+      padding: 92px 20px;
+    }
+
+    .labs-feature-title {
+      font-size: clamp(2.75rem, 13vw, 4rem);
+    }
+
+    .labs-media-panel::after {
+      max-width: 72%;
+      font-size: 8px;
+    }
+
+    .labs-cramazon-stack {
+      right: 5%;
+      bottom: 10%;
+    }
+
+    .labs-media-box {
+      min-width: 8rem;
+      font-size: 9px;
+    }
+
+    .labs-painstation-screen {
+      left: 5%;
+      right: 5%;
+    }
+
+    .labs-painstation-hud span {
+      font-size: 9px;
+    }
+
+    .labs-nerd-call {
+      inset: 18% 5% auto 5%;
+      gap: 0.75rem;
+    }
+
+    .labs-nerd-bubble {
+      right: 0.75rem;
+      bottom: 0.75rem;
+      max-width: 14rem;
+      font-size: 0.85rem;
+    }
+
+    .labs-void-ring {
+      width: 11rem;
+      height: 11rem;
+    }
+
+    .labs-void-post {
+      max-width: 10rem;
+      font-size: 0.72rem;
+    }
+
+    .labs-blackmarket-folder {
+      right: 5%;
+      top: 20%;
+      font-size: 10px;
+    }
+
+    .labs-uniconnect-grid {
+      grid-template-columns: minmax(0, 1fr);
+      inset: 14% 6% auto 6%;
+    }
+
+    .labs-uniconnect-links {
+      display: none;
     }
   }
 }
